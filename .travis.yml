@@ -13,3 +13,8 @@ script:
   - npm run build
 after_success:
   - npm publish
+deploy:
+  provider: npm
+  email: 794861654@qq.com
+  api_key: "$NPM_TOKEN"
+  skip_cleanup: true

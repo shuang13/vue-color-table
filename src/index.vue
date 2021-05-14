@@ -43,7 +43,6 @@
                   <el-color-picker class="vct_dialog_content_mid_lut-color-table_color-picker"
                     v-model="lutItem[scope.$index].color" show-alpha @change="handleColorPickerChange">
                   </el-color-picker>
-                  <!-- <div :style="setBgStyleByColor(scope.$index)"></div> -->
                 </template>
               </el-table-column>
               <el-table-column prop="value" label="真实值" :formatter="colorValueformatter">
@@ -268,21 +267,6 @@
           this.lutItem.splice(this.selectIndex[0] + 1, 0, newList[i]);
           this.selectIndex[1]++
         }
-
-        // for (let i = newList.length - 1; i >= 0; i--) {
-        //   for (let j = this.selectIndex[1] - 1; j >= this.selectIndex[0]; j--) {
-        //     this.lutItem.splice(j + 1, 0, newList[i]);
-
-        //     if (newList[i].value > this.lutItem[j].value) {
-        //       this.lutItem.splice(j + 1, 0, newList[i]);
-        //       this.selectIndex[1]++;
-        //       break;
-        //     } else if (newList[i].value == this.lutItem[j].value) {
-        //       this.lutItem[j].color = newList[i].color;
-        //       break;
-        //     }
-        //   }
-        // }
       },
       modifyColorItem(index, items) {
         let colors = [];
