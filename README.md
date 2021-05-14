@@ -1,5 +1,7 @@
 # vue-color-table
 
+[![npm](https://img.shields.io/npm/v/vue-color-table.svg)](https://www.npmjs.com/package/vue-color-table) [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://mit-license.org/) [![language](https://img.shields.io/badge/language-Vue2-brightgreen.svg)](https://www.npmjs.com/package/v-viewer)
+
 > a colorpicker component for Vue.js.
 
 [DEMO](https://shuang13.github.io/vue-color-table/demo/index.html)
