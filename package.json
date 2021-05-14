@@ -1,6 +1,6 @@
 {
   "name": "vue-color-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a colorpicker component for Vue.js.",
   "author": "ZhangBingBin<794861654@qq.com>",
   "main": "./dist/VueColorTable.umd.js",
