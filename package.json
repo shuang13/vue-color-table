@@ -1,0 +1,64 @@
+{
+  "name": "vue-color-table",
+  "version": "1.0.0",
+  "description": "a colorpicker component for Vue.js.",
+  "author": "ZhangBingBin<794861654@qq.com>",
+  "main": "./dist/VueColorTable.umd.js",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name VueColorTable src/index.vue --formats umd",
+    "demo": "vue-cli-service build --dest ./demo",
+    "test": "karma start",
+    "lint": "vue-cli-service lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shuang13/vue-color-table.git"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.1",
+    "karma": "^6.3.2",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.3",
+    "karma-coveralls": "^2.1.0",
+    "karma-mocha": "^2.0.1",
+    "karma-spec-reporter": "0.0.32",
+    "karma-webpack": "^5.0.0",
+    "mocha": "^8.3.2",
+    "vue": "^2.6.11"
+  },
+  "keywords": [
+    "vue-color-table",
+    "colorpicker",
+    "colorpane",
+    "colorbar",
+    "color",
+    "zbb"
+  ],
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-unit-mocha": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/test-utils": "^1.0.3",
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.1.2",
+    "cz-conventional-emoji": "^1.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-emoji"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/shuang13/vue-color-table/issues",
+    "email": "794861654@qq.com"
+  }
+}
