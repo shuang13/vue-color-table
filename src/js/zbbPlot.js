@@ -117,9 +117,10 @@ ZbbPlot.prototype = {
     }
   },
   clearLineByMouse() {
-    this.clickX = [];
-    this.clickY = [];
-    this.clickDrag = [];
+    this.clickX.splice(0);
+    this.clickY.splice(0);
+    this.clickDrag.splice(0);
+
   },
   clear: function () {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);

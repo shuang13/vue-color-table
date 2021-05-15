@@ -123,6 +123,8 @@ ColorBar.prototype = {
   clear: function () {
     this.zp.clear();
   },
+  destroyed: function () {
+  },
   init: function () {
     this.clear();
     this.render();

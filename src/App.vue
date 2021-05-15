@@ -18,9 +18,7 @@
     data() {
       return {
         range: [-500, 500],
-        colors: {
-          
-        }
+        colors: {}
       }
     }
   }

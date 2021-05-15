@@ -4,7 +4,7 @@
     </div>
     <el-dialog class="vct_dialog" title="颜色方案" :visible.sync="dialogVisible" width="780px" height="550px">
       <div class="vct_dialog_content">
-        <div class="vct_dialog_content_left" @mousemove="function(e) { e.preventDefault();}">
+        <div class="vct_dialog_content_left">
           <div class="vct_dialog_content_left_table">
             <el-table ref="leftTable" height="100%" fixed highlight-current-row :data="lutData" border
               :header-cell-style="{padding: 0}" :cell-style="{padding: 0}" @row-click="handleRowClick">
@@ -30,7 +30,7 @@
         </div>
         <div class="vct_dialog_content_mid">
           <div class="vct_dialog_content_mid_opacity-chart" @mouseup="parseOpacityToLutItem"
-            @mousemove="function(e) { e.preventDefault();}">
+            >
             <canvas class="vct_dialog_content_mid_opacity-chart_canvas" width="360px" height="170px"></canvas>
           </div>
           <div class="vct_dialog_content_mid_lut-color-table">
@@ -59,7 +59,7 @@
             </div>
           </div>
         </div>
-        <div class="vct_dialog_content_right" @mousemove="function(e) { e.preventDefault();}">
+        <div class="vct_dialog_content_right" >
           <canvas class="vct_dialog_content_right_color-bar" width="67px" height="500px">
 
           </canvas>
@@ -103,6 +103,14 @@
         }
       }
     },
+    watch: {
+      dialogVisible(val) {
+        if(!val) {
+          this.destroyColorBar();
+          this.destroyOpacityChart();
+        }
+      }
+    },
     computed: {
       newVal: {
         get: function () {
@@ -140,16 +148,16 @@
       };
     },
     created() {
-
       if (!this.value.name) {
         this.value['name'] = 'rainbow';
         this.value['colors'] = COLOR_TABLE_CONFIG['rainbow'];
         this.currentName = 'rainbow';
       }
     },
+    destroyed () {
+    },
     mounted() {
-
-
+      
     },
     methods: {
       colorValueformatter(row) {
@@ -400,6 +408,10 @@
         }
         this.cb.refresh(opts);
       },
+      destroyColorBar () {
+        this.cb.destroyed();
+        this.cb = null;
+      },
       initOpacityChart() {
         let opts = {
           data: this.lutItem,
@@ -409,6 +421,7 @@
         this.oc = new OpacityChart(document.querySelector('.vct_dialog_content_mid_opacity-chart_canvas'), opts);
         this.oc.init();
       },
+      
       refreshOpacityChart() {
         let opts = {
           data: this.lutItem,
@@ -416,6 +429,10 @@
         }
         this.oc.refresh(opts);
       },
+      destroyOpacityChart() {
+        this.oc.destroy();
+        this.oc = null;
+      }
     }
   };
 </script>

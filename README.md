@@ -33,7 +33,7 @@ $ npm install vue-color-table
     data() {
       return {
         range: [-500, 500],
-        colors: Object
+        colors: {}
       }
     }
   }

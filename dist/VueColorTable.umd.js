@@ -4378,12 +4378,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5719d285-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=492ef051&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vct"},[_c('div',{staticClass:"vct_trigger",style:(Object.assign({}, _vm.triggerStyle, {background: _vm.parseBgcolorTemplate(_vm.value)})),on:{"click":_vm.handleTrigger}}),_c('el-dialog',{staticClass:"vct_dialog",attrs:{"title":"颜色方案","visible":_vm.dialogVisible,"width":"780px","height":"550px"},on:{"update:visible":function($event){_vm.dialogVisible=$event}}},[_c('div',{staticClass:"vct_dialog_content"},[_c('div',{staticClass:"vct_dialog_content_left",on:{"mousemove":function(e) { e.preventDefault();}}},[_c('div',{staticClass:"vct_dialog_content_left_table"},[_c('el-table',{ref:"leftTable",attrs:{"height":"100%","fixed":"","highlight-current-row":"","data":_vm.lutData,"border":"","header-cell-style":{padding: 0},"cell-style":{padding: 0}},on:{"row-click":_vm.handleRowClick}},[_c('el-table-column',{attrs:{"prop":"name","label":"方案名称"}}),_c('el-table-column',{attrs:{"label":"色表"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',{style:(_vm.setBgStyleByColorArr(scope.$index))})]}}])})],1)],1),_c('div',{staticClass:"vct_dialog_content_left_handle"},[_c('div',{staticClass:"vct_dialog_content_left_handle_input-box  ui-vct-ib"},[_c('span',{staticClass:"vct_dialog_content_left_handle_input-box_text"},[_vm._v("名称：")]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.currentName),expression:"currentName"}],staticClass:"vct_dialog_content_left_handle_input-box_value",attrs:{"type":"text"},domProps:{"value":(_vm.currentName)},on:{"input":function($event){if($event.target.composing){ return; }_vm.currentName=$event.target.value}}})]),_c('div',{staticClass:"vct_dialog_content_left_handle_btn  ui-vct-ib"},[_c('button',{staticClass:"vct_dialog_content_left_handle_btn_save ui-vct-btn",on:{"click":_vm.handleBtnSave}},[_vm._v("保存")]),_c('button',{staticClass:"vct_dialog_content_left_handle_btn_delete ui-vct-btn",on:{"click":_vm.handleBtnDelete}},[_vm._v("删除")])])])]),_c('div',{staticClass:"vct_dialog_content_mid"},[_c('div',{staticClass:"vct_dialog_content_mid_opacity-chart",on:{"mouseup":_vm.parseOpacityToLutItem,"mousemove":function(e) { e.preventDefault();}}},[_c('canvas',{staticClass:"vct_dialog_content_mid_opacity-chart_canvas",attrs:{"width":"360px","height":"170px"}})]),_c('div',{staticClass:"vct_dialog_content_mid_lut-color-table"},[_c('el-table',{attrs:{"data":_vm.lutItem,"height":"100%","fixed":"","border":"","header-cell-style":{padding: 0},"cell-style":{padding: 0}},on:{"select":_vm.handleSelectionChange}},[_c('el-table-column',{attrs:{"type":"selection","label":"状态","width":"55"}}),_c('el-table-column',{attrs:{"label":"颜色"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('el-color-picker',{staticClass:"vct_dialog_content_mid_lut-color-table_color-picker",attrs:{"show-alpha":""},on:{"change":_vm.handleColorPickerChange},model:{value:(_vm.lutItem[scope.$index].color),callback:function ($$v) {_vm.$set(_vm.lutItem[scope.$index], "color", $$v)},expression:"lutItem[scope.$index].color"}})]}}])}),_c('el-table-column',{attrs:{"prop":"value","label":"真实值","formatter":_vm.colorValueformatter}})],1)],1),_c('div',{staticClass:"vct_dialog_content_mid_handle"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.ipNum),expression:"ipNum"}],staticClass:"vct_dialog_content_mid_handle_input-interpolation",attrs:{"type":"number","value":"1","oninput":"if(value<1)value=1"},domProps:{"value":(_vm.ipNum)},on:{"input":function($event){if($event.target.composing){ return; }_vm.ipNum=$event.target.value}}}),_c('div',{staticClass:"vct_dialog_content_mid_handle_btn ui-vct-ib"},[_c('button',{staticClass:"vct_dialog_content_mid_handle_btn_interpolation ui-vct-btn",on:{"click":_vm.handleBtnInterpolation}},[_vm._v("插值")]),_c('button',{staticClass:"vct_dialog_content_mid_handle_btn_delete ui-vct-btn",on:{"click":_vm.handleBtnRemove}},[_vm._v("删除")])])])]),_c('div',{staticClass:"vct_dialog_content_right",on:{"mousemove":function(e) { e.preventDefault();}}},[_c('canvas',{staticClass:"vct_dialog_content_right_color-bar",attrs:{"width":"67px","height":"500px"}})])]),_c('div',{staticClass:"vct_dialog_footer",attrs:{"slot":"footer"},slot:"footer"},[_c('button',{staticClass:"vct_dialog_footer_btn-cancel ui-vct-btn",on:{"click":_vm.handleBtnCancel}},[_vm._v("取 消")]),_c('button',{staticClass:"vct_dialog_footer_btn-ok ui-vct-btn",on:{"click":_vm.handleBtnOk}},[_vm._v("确 定")])])])],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"73748216-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=c436484e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vct"},[_c('div',{staticClass:"vct_trigger",style:(Object.assign({}, _vm.triggerStyle, {background: _vm.parseBgcolorTemplate(_vm.value)})),on:{"click":_vm.handleTrigger}}),_c('el-dialog',{staticClass:"vct_dialog",attrs:{"title":"颜色方案","visible":_vm.dialogVisible,"width":"780px","height":"550px"},on:{"update:visible":function($event){_vm.dialogVisible=$event}}},[_c('div',{staticClass:"vct_dialog_content"},[_c('div',{staticClass:"vct_dialog_content_left"},[_c('div',{staticClass:"vct_dialog_content_left_table"},[_c('el-table',{ref:"leftTable",attrs:{"height":"100%","fixed":"","highlight-current-row":"","data":_vm.lutData,"border":"","header-cell-style":{padding: 0},"cell-style":{padding: 0}},on:{"row-click":_vm.handleRowClick}},[_c('el-table-column',{attrs:{"prop":"name","label":"方案名称"}}),_c('el-table-column',{attrs:{"label":"色表"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',{style:(_vm.setBgStyleByColorArr(scope.$index))})]}}])})],1)],1),_c('div',{staticClass:"vct_dialog_content_left_handle"},[_c('div',{staticClass:"vct_dialog_content_left_handle_input-box  ui-vct-ib"},[_c('span',{staticClass:"vct_dialog_content_left_handle_input-box_text"},[_vm._v("名称：")]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.currentName),expression:"currentName"}],staticClass:"vct_dialog_content_left_handle_input-box_value",attrs:{"type":"text"},domProps:{"value":(_vm.currentName)},on:{"input":function($event){if($event.target.composing){ return; }_vm.currentName=$event.target.value}}})]),_c('div',{staticClass:"vct_dialog_content_left_handle_btn  ui-vct-ib"},[_c('button',{staticClass:"vct_dialog_content_left_handle_btn_save ui-vct-btn",on:{"click":_vm.handleBtnSave}},[_vm._v("保存")]),_c('button',{staticClass:"vct_dialog_content_left_handle_btn_delete ui-vct-btn",on:{"click":_vm.handleBtnDelete}},[_vm._v("删除")])])])]),_c('div',{staticClass:"vct_dialog_content_mid"},[_c('div',{staticClass:"vct_dialog_content_mid_opacity-chart",on:{"mouseup":_vm.parseOpacityToLutItem}},[_c('canvas',{staticClass:"vct_dialog_content_mid_opacity-chart_canvas",attrs:{"width":"360px","height":"170px"}})]),_c('div',{staticClass:"vct_dialog_content_mid_lut-color-table"},[_c('el-table',{attrs:{"data":_vm.lutItem,"height":"100%","fixed":"","border":"","header-cell-style":{padding: 0},"cell-style":{padding: 0}},on:{"select":_vm.handleSelectionChange}},[_c('el-table-column',{attrs:{"type":"selection","label":"状态","width":"55"}}),_c('el-table-column',{attrs:{"label":"颜色"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('el-color-picker',{staticClass:"vct_dialog_content_mid_lut-color-table_color-picker",attrs:{"show-alpha":""},on:{"change":_vm.handleColorPickerChange},model:{value:(_vm.lutItem[scope.$index].color),callback:function ($$v) {_vm.$set(_vm.lutItem[scope.$index], "color", $$v)},expression:"lutItem[scope.$index].color"}})]}}])}),_c('el-table-column',{attrs:{"prop":"value","label":"真实值","formatter":_vm.colorValueformatter}})],1)],1),_c('div',{staticClass:"vct_dialog_content_mid_handle"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.ipNum),expression:"ipNum"}],staticClass:"vct_dialog_content_mid_handle_input-interpolation",attrs:{"type":"number","value":"1","oninput":"if(value<1)value=1"},domProps:{"value":(_vm.ipNum)},on:{"input":function($event){if($event.target.composing){ return; }_vm.ipNum=$event.target.value}}}),_c('div',{staticClass:"vct_dialog_content_mid_handle_btn ui-vct-ib"},[_c('button',{staticClass:"vct_dialog_content_mid_handle_btn_interpolation ui-vct-btn",on:{"click":_vm.handleBtnInterpolation}},[_vm._v("插值")]),_c('button',{staticClass:"vct_dialog_content_mid_handle_btn_delete ui-vct-btn",on:{"click":_vm.handleBtnRemove}},[_vm._v("删除")])])])]),_c('div',{staticClass:"vct_dialog_content_right"},[_c('canvas',{staticClass:"vct_dialog_content_right_color-bar",attrs:{"width":"67px","height":"500px"}})])]),_c('div',{staticClass:"vct_dialog_footer",attrs:{"slot":"footer"},slot:"footer"},[_c('button',{staticClass:"vct_dialog_footer_btn-cancel ui-vct-btn",on:{"click":_vm.handleBtnCancel}},[_vm._v("取 消")]),_c('button',{staticClass:"vct_dialog_footer_btn-ok ui-vct-btn",on:{"click":_vm.handleBtnOk}},[_vm._v("确 定")])])])],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=492ef051&
+// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=c436484e&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
 var es_function_name = __webpack_require__("b0c0");
@@ -4425,6 +4425,9 @@ var es_object_to_string = __webpack_require__("d3b7");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.iterator.js
 var es_symbol_iterator = __webpack_require__("d28b");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.iterator.js
+var es_array_iterator = __webpack_require__("e260");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.iterator.js
 var es_string_iterator = __webpack_require__("3ca3");
 
@@ -4432,6 +4435,7 @@ var es_string_iterator = __webpack_require__("3ca3");
 var web_dom_collections_iterator = __webpack_require__("ddb0");
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+
 
 
 
@@ -4670,6 +4674,7 @@ function linearMap(val, domain, range, clamp) {
 });
 // CONCATENATED MODULE: ./src/js/zbbPlot.js
 
+
 var DEFAULT_STYLE_CONFIG = {
   LINE: {
     lineWidth: 1
@@ -4796,9 +4801,9 @@ ZbbPlot.prototype = {
     }
   },
   clearLineByMouse: function clearLineByMouse() {
-    this.clickX = [];
-    this.clickY = [];
-    this.clickDrag = [];
+    this.clickX.splice(0);
+    this.clickY.splice(0);
+    this.clickDrag.splice(0);
   },
   clear: function clear() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -4936,6 +4941,7 @@ ColorBar.prototype = {
   clear: function clear() {
     this.zp.clear();
   },
+  destroyed: function destroyed() {},
   init: function init() {
     this.clear();
     this.render();
@@ -4947,6 +4953,7 @@ ColorBar.prototype = {
 
 
 
+var opacityChart_self;
 
 function OpacityChart(dom, opts) {
   this.zp = new zbbPlot(dom);
@@ -4958,6 +4965,9 @@ function OpacityChart(dom, opts) {
   this.opacityList = [];
   this.opacityPointY = [];
   this.colorPostion = [];
+  this.paintFlag = false;
+  this.left = this.canvas.getBoundingClientRect().left;
+  this.top = this.canvas.getBoundingClientRect().top + 20;
   this.Boundary = {
     x: 10,
     y: 10,
@@ -5140,94 +5150,93 @@ OpacityChart.prototype = {
       });
     }
   },
+  handleMousedown: function handleMousedown(e) {
+    var mouseX = e.pageX - opacityChart_self.left;
+    var mouseY = e.pageY - opacityChart_self.top;
+
+    if (mouseX > opacityChart_self.gridBoundary.x && mouseY > opacityChart_self.gridBoundary.y && mouseX < opacityChart_self.gridBoundary.x + opacityChart_self.gridBoundary.width && mouseY < opacityChart_self.gridBoundary.y + opacityChart_self.gridBoundary.height) {
+      opacityChart_self.paintFlag = true;
+      opacityChart_self.zp.addClick(mouseX, mouseY, false);
+      opacityChart_self.zp.reDrawLineByMouse();
+    }
+  },
+  handleMousemove: function handleMousemove(e) {
+    e.preventDefault();
+    var mouseX = e.pageX - opacityChart_self.left;
+    var mouseY = e.pageY - opacityChart_self.top;
+
+    if (opacityChart_self.paintFlag) {
+      if (mouseX > opacityChart_self.gridBoundary.x && mouseY > opacityChart_self.gridBoundary.y && mouseX < opacityChart_self.gridBoundary.x + opacityChart_self.gridBoundary.width && mouseY < opacityChart_self.gridBoundary.y + opacityChart_self.gridBoundary.height) {
+        opacityChart_self.zp.addClick(mouseX, mouseY, true);
+        opacityChart_self.zp.reDrawLineByMouse();
+      }
+    }
+  },
+  handleMouseup: function handleMouseup(e) {
+    e.preventDefault();
+
+    for (var i = 99; i < opacityChart_self.zp.clickX.length; i++) {
+      var dataX = parseInt(opacityChart_self.pointToData(opacityChart_self.zp.clickX[i], [opacityChart_self.gridBoundary.x, opacityChart_self.gridBoundary.x + opacityChart_self.gridBoundary.width], [0, 100]));
+      var dataY = Number(opacityChart_self.pointToData(opacityChart_self.zp.clickY[i], [opacityChart_self.gridBoundary.y, opacityChart_self.gridBoundary.y + opacityChart_self.gridBoundary.height], [1, 0]).toFixed(2));
+
+      for (var j = 0; j < opacityChart_self.colorPostion.length; j++) {
+        if (dataX >= opacityChart_self.colorPostion[j] && dataX < opacityChart_self.colorPostion[j] + 5) {
+          opacityChart_self.opacityPointY[opacityChart_self.colorPostion[j]] = dataY;
+        }
+      }
+    }
+
+    for (var _i2 = 0; _i2 < opacityChart_self.colorPostion.length; _i2++) {
+      opacityChart_self.opacityList[_i2] = opacityChart_self.opacityPointY[opacityChart_self.colorPostion[_i2]];
+    }
+
+    opacityChart_self.clear();
+    opacityChart_self.drawGrid();
+    opacityChart_self.drawAxis();
+    opacityChart_self.drawOpacityLine();
+    opacityChart_self.paintFlag = false;
+  },
+  handleMouseleave: function handleMouseleave(e) {
+    e.preventDefault();
+
+    for (var i = 99; i < opacityChart_self.zp.clickX.length; i++) {
+      var dataX = parseInt(opacityChart_self.pointToData(opacityChart_self.zp.clickX[i], [opacityChart_self.gridBoundary.x, opacityChart_self.gridBoundary.x + opacityChart_self.gridBoundary.width], [0, 100]));
+      var dataY = Number(opacityChart_self.pointToData(opacityChart_self.zp.clickY[i], [opacityChart_self.gridBoundary.y, opacityChart_self.gridBoundary.y + opacityChart_self.gridBoundary.height], [1, 0]).toFixed(2));
+
+      for (var j = 0; j < opacityChart_self.colorPostion.length; j++) {
+        if (dataX >= opacityChart_self.colorPostion[j] && dataX < opacityChart_self.colorPostion[j] + 5) {
+          opacityChart_self.opacityPointY[opacityChart_self.colorPostion[j]] = dataY;
+        }
+      }
+    }
+
+    for (var _i3 = 0; _i3 < opacityChart_self.colorPostion.length; _i3++) {
+      opacityChart_self.opacityList[_i3] = opacityChart_self.opacityPointY[opacityChart_self.colorPostion[_i3]];
+    }
+
+    opacityChart_self.clear();
+    opacityChart_self.drawGrid();
+    opacityChart_self.drawAxis();
+    opacityChart_self.drawOpacityLine();
+    opacityChart_self.paintFlag = false;
+  },
   drawLineByMouse: function drawLineByMouse() {
-    var _this = this;
-
-    var paintFlag = false;
-    var left = this.canvas.getBoundingClientRect().left;
-    var top = this.canvas.getBoundingClientRect().top + 20;
-    this.canvas.addEventListener('mousedown', function (e) {
-      var mouseX = e.pageX - left;
-      var mouseY = e.pageY - top;
-
-      if (mouseX > _this.gridBoundary.x && mouseY > _this.gridBoundary.y && mouseX < _this.gridBoundary.x + _this.gridBoundary.width && mouseY < _this.gridBoundary.y + _this.gridBoundary.height) {
-        paintFlag = true;
-
-        _this.zp.addClick(mouseX, mouseY, false);
-
-        _this.zp.reDrawLineByMouse();
-      }
-    }, false);
-    this.canvas.addEventListener('mousemove', function (e) {
-      e.preventDefault();
-      var mouseX = e.pageX - left;
-      var mouseY = e.pageY - top;
-
-      if (paintFlag) {
-        if (mouseX > _this.gridBoundary.x && mouseY > _this.gridBoundary.y && mouseX < _this.gridBoundary.x + _this.gridBoundary.width && mouseY < _this.gridBoundary.y + _this.gridBoundary.height) {
-          _this.zp.addClick(mouseX, mouseY, true);
-
-          _this.zp.reDrawLineByMouse();
-        }
-      }
-    }, false);
-    this.canvas.addEventListener('mouseup', function () {
-      for (var i = 99; i < _this.zp.clickX.length; i++) {
-        var dataX = parseInt(_this.pointToData(_this.zp.clickX[i], [_this.gridBoundary.x, _this.gridBoundary.x + _this.gridBoundary.width], [0, 100]));
-        var dataY = Number(_this.pointToData(_this.zp.clickY[i], [_this.gridBoundary.y, _this.gridBoundary.y + _this.gridBoundary.height], [1, 0]).toFixed(2));
-
-        for (var j = 0; j < _this.colorPostion.length; j++) {
-          if (dataX >= _this.colorPostion[j] && dataX < _this.colorPostion[j] + 5) {
-            _this.opacityPointY[_this.colorPostion[j]] = dataY;
-          }
-        }
-      }
-
-      for (var _i2 = 0; _i2 < _this.colorPostion.length; _i2++) {
-        _this.opacityList[_i2] = _this.opacityPointY[_this.colorPostion[_i2]];
-      }
-
-      _this.clear();
-
-      _this.drawGrid();
-
-      _this.drawAxis();
-
-      _this.drawOpacityLine();
-
-      paintFlag = false;
-    }, false);
-    this.canvas.addEventListener('mouseleave', function () {
-      for (var i = 99; i < _this.zp.clickX.length; i++) {
-        var dataX = parseInt(_this.pointToData(_this.zp.clickX[i], [_this.gridBoundary.x, _this.gridBoundary.x + _this.gridBoundary.width], [0, 100]));
-        var dataY = Number(_this.pointToData(_this.zp.clickY[i], [_this.gridBoundary.y, _this.gridBoundary.y + _this.gridBoundary.height], [1, 0]).toFixed(2));
-
-        for (var j = 0; j < _this.colorPostion.length; j++) {
-          if (dataX >= _this.colorPostion[j] && dataX < _this.colorPostion[j] + 5) {
-            _this.opacityPointY[_this.colorPostion[j]] = dataY;
-          }
-        }
-      }
-
-      for (var _i3 = 0; _i3 < _this.colorPostion.length; _i3++) {
-        _this.opacityList[_i3] = _this.opacityPointY[_this.colorPostion[_i3]];
-      }
-
-      _this.clear();
-
-      _this.drawGrid();
-
-      _this.drawAxis();
-
-      _this.drawOpacityLine();
-
-      paintFlag = false;
-    }, false);
+    opacityChart_self = this;
+    this.canvas.addEventListener('mousedown', this.handleMousedown, false);
+    this.canvas.addEventListener('mousemove', this.handleMousemove, false);
+    this.canvas.addEventListener('mouseup', this.handleMouseup, false);
+    this.canvas.addEventListener('mouseleave', this.handleMouseleave, false);
   },
   addEvent: function addEvent() {
     if (this.drawLineByMouseFlag) {
       this.drawLineByMouse();
     }
+  },
+  removeEvent: function removeEvent() {
+    this.canvas.removeEventListener('mousedown', this.handleMousedown);
+    this.canvas.removeEventListener('mousemove', this.handleMousemove);
+    this.canvas.removeEventListener('mouseup', this.handleMouseup);
+    this.canvas.removeEventListener('mouseleave', this.handleMouseleave);
   },
   // 数据转为像素坐标
   dataToPoint: function dataToPoint(data, domain, range) {
@@ -5246,6 +5255,11 @@ OpacityChart.prototype = {
     this.opts = opts;
     this.clear();
     this.render();
+  },
+  destroy: function destroy() {
+    this.removeEvent();
+    this.zp = null;
+    this.canvas = null;
   },
   clear: function clear() {
     this.zp.clear();
@@ -5266,7 +5280,6 @@ OpacityChart.prototype = {
 
 
 
-//
 //
 //
 //
@@ -5370,6 +5383,14 @@ var COLOR_TABLE_CONFIG = {
       }
     }
   },
+  watch: {
+    dialogVisible: function dialogVisible(val) {
+      if (!val) {
+        this.destroyColorBar();
+        this.destroyOpacityChart();
+      }
+    }
+  },
   computed: {
     newVal: {
       get: function get() {
@@ -5410,6 +5431,7 @@ var COLOR_TABLE_CONFIG = {
       this.currentName = 'rainbow';
     }
   },
+  destroyed: function destroyed() {},
   mounted: function mounted() {},
   methods: {
     colorValueformatter: function colorValueformatter(row) {
@@ -5529,20 +5551,7 @@ var COLOR_TABLE_CONFIG = {
       for (var i = newList.length - 1; i >= 0; i--) {
         this.lutItem.splice(this.selectIndex[0] + 1, 0, newList[i]);
         this.selectIndex[1]++;
-      } // for (let i = newList.length - 1; i >= 0; i--) {
-      //   for (let j = this.selectIndex[1] - 1; j >= this.selectIndex[0]; j--) {
-      //     this.lutItem.splice(j + 1, 0, newList[i]);
-      //     if (newList[i].value > this.lutItem[j].value) {
-      //       this.lutItem.splice(j + 1, 0, newList[i]);
-      //       this.selectIndex[1]++;
-      //       break;
-      //     } else if (newList[i].value == this.lutItem[j].value) {
-      //       this.lutItem[j].color = newList[i].color;
-      //       break;
-      //     }
-      //   }
-      // }
-
+      }
     },
     modifyColorItem: function modifyColorItem(index, items) {
       var colors = [];
@@ -5679,6 +5688,10 @@ var COLOR_TABLE_CONFIG = {
       };
       this.cb.refresh(opts);
     },
+    destroyColorBar: function destroyColorBar() {
+      this.cb.destroyed();
+      this.cb = null;
+    },
     initOpacityChart: function initOpacityChart() {
       var opts = {
         data: this.lutItem,
@@ -5694,6 +5707,10 @@ var COLOR_TABLE_CONFIG = {
         minMax: [0.0, 1.0]
       };
       this.oc.refresh(opts);
+    },
+    destroyOpacityChart: function destroyOpacityChart() {
+      this.oc.destroy();
+      this.oc = null;
     }
   }
 });

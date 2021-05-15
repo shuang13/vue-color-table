@@ -1,4 +1,5 @@
 import zp from './zbbPlot'
+let self;
 function OpacityChart(dom, opts) {
   this.zp = new zp(dom);
   this.canvas = dom;
@@ -9,6 +10,10 @@ function OpacityChart(dom, opts) {
   this.opacityList = [];
   this.opacityPointY = [];
   this.colorPostion = [];
+
+  this.paintFlag = false;
+  this.left = this.canvas.getBoundingClientRect().left;
+  this.top = this.canvas.getBoundingClientRect().top + 20;
   this.Boundary = {
     x: 10,
     y: 10,
@@ -183,85 +188,94 @@ OpacityChart.prototype = {
     }
 
   },
+  handleMousedown(e) {
+    let mouseX = e.pageX - self.left;
+    let mouseY = e.pageY - self.top;
+    if (mouseX > self.gridBoundary.x && mouseY > self.gridBoundary.y && mouseX < self.gridBoundary.x + self.gridBoundary.width && mouseY < self.gridBoundary.y + self.gridBoundary.height) {
+      self.paintFlag = true;
+      self.zp.addClick(mouseX, mouseY, false);
+      self.zp.reDrawLineByMouse();
+    }
+  },
+  handleMousemove(e) {
+    e.preventDefault();
+    let mouseX = e.pageX - self.left;
+    let mouseY = e.pageY - self.top;
+    if (self.paintFlag) {
+      if (mouseX > self.gridBoundary.x && mouseY > self.gridBoundary.y && mouseX < self.gridBoundary.x + self.gridBoundary.width && mouseY < self.gridBoundary.y + self.gridBoundary.height) {
+        self.zp.addClick(mouseX, mouseY, true);
+        self.zp.reDrawLineByMouse();
+      }
+    }
+  },
+  handleMouseup(e) {
+    e.preventDefault();
+
+    for (let i = 99; i < self.zp.clickX.length; i++) {
+      let dataX = parseInt(self.pointToData(self.zp.clickX[i], [self.gridBoundary.x, self.gridBoundary.x + self.gridBoundary.width], [0, 100]));
+      let dataY = Number(self.pointToData(self.zp.clickY[i], [self.gridBoundary.y, self.gridBoundary.y + self.gridBoundary.height], [1, 0]).toFixed(2));
+      for (let j = 0; j < self.colorPostion.length; j++) {
+
+        if (dataX >= self.colorPostion[j] && dataX < self.colorPostion[j] + 5) {
+          self.opacityPointY[self.colorPostion[j]] = dataY;
+
+        }
+
+      }
+    }
+    
+    for (let i = 0; i < self.colorPostion.length; i++) {
+      self.opacityList[i] = self.opacityPointY[self.colorPostion[i]];
+    }
+    self.clear();
+    self.drawGrid();
+    self.drawAxis();
+    self.drawOpacityLine();
+    self.paintFlag = false;
+  },
+  handleMouseleave(e) {
+    e.preventDefault();
+
+    for (let i = 99; i < self.zp.clickX.length; i++) {
+      let dataX = parseInt(self.pointToData(self.zp.clickX[i], [self.gridBoundary.x, self.gridBoundary.x + self.gridBoundary.width], [0, 100]));
+      let dataY = Number(self.pointToData(self.zp.clickY[i], [self.gridBoundary.y, self.gridBoundary.y + self.gridBoundary.height], [1, 0]).toFixed(2));
+      for (let j = 0; j < self.colorPostion.length; j++) {
+
+        if (dataX >= self.colorPostion[j] && dataX < self.colorPostion[j] + 5) {
+          self.opacityPointY[self.colorPostion[j]] = dataY;
+
+        }
+
+      }
+    }
+    for (let i = 0; i < self.colorPostion.length; i++) {
+      self.opacityList[i] = self.opacityPointY[self.colorPostion[i]];
+    }
+    self.clear();
+    self.drawGrid();
+    self.drawAxis();
+    self.drawOpacityLine();
+    self.paintFlag = false;
+  },
   drawLineByMouse: function () {
-    let paintFlag = false;
-    let left = this.canvas.getBoundingClientRect().left;
-    let top = this.canvas.getBoundingClientRect().top + 20;
-    this.canvas.addEventListener('mousedown', (e) => {
-      let mouseX = e.pageX - left;
-      let mouseY = e.pageY - top;
-      if (mouseX > this.gridBoundary.x && mouseY > this.gridBoundary.y && mouseX < this.gridBoundary.x + this.gridBoundary.width && mouseY < this.gridBoundary.y + this.gridBoundary.height) {
-        paintFlag = true;
-        this.zp.addClick(mouseX, mouseY, false);
-        this.zp.reDrawLineByMouse();
-      }
-
-
-    }, false);
-    this.canvas.addEventListener('mousemove', (e) => {
-      e.preventDefault();
-      let mouseX = e.pageX - left;
-      let mouseY = e.pageY - top;
-      if (paintFlag) {
-        if (mouseX > this.gridBoundary.x && mouseY > this.gridBoundary.y && mouseX < this.gridBoundary.x + this.gridBoundary.width && mouseY < this.gridBoundary.y + this.gridBoundary.height) {
-          this.zp.addClick(mouseX, mouseY, true);
-          this.zp.reDrawLineByMouse();
-        }
-      }
-    }, false);
-    this.canvas.addEventListener('mouseup', () => {
-
-      for (let i = 99; i < this.zp.clickX.length; i++) {
-        let dataX = parseInt(this.pointToData(this.zp.clickX[i], [this.gridBoundary.x, this.gridBoundary.x + this.gridBoundary.width], [0, 100]));
-        let dataY = Number(this.pointToData(this.zp.clickY[i], [this.gridBoundary.y, this.gridBoundary.y + this.gridBoundary.height], [1, 0]).toFixed(2));
-        for (let j = 0; j < this.colorPostion.length; j++) {
-
-          if (dataX >= this.colorPostion[j] && dataX < this.colorPostion[j] + 5) {
-            this.opacityPointY[this.colorPostion[j]] = dataY;
-
-          }
-
-        }
-      }
-      for (let i = 0; i < this.colorPostion.length; i++) {
-        this.opacityList[i] = this.opacityPointY[this.colorPostion[i]];
-      }
-      this.clear();
-      this.drawGrid();
-      this.drawAxis();
-      this.drawOpacityLine();
-      paintFlag = false;
-    }, false);
-    this.canvas.addEventListener('mouseleave', () => {
-      for (let i = 99; i < this.zp.clickX.length; i++) {
-        let dataX = parseInt(this.pointToData(this.zp.clickX[i], [this.gridBoundary.x, this.gridBoundary.x + this.gridBoundary.width], [0, 100]));
-        let dataY = Number(this.pointToData(this.zp.clickY[i], [this.gridBoundary.y, this.gridBoundary.y + this.gridBoundary.height], [1, 0]).toFixed(2));
-        for (let j = 0; j < this.colorPostion.length; j++) {
-
-          if (dataX >= this.colorPostion[j] && dataX < this.colorPostion[j] + 5) {
-            this.opacityPointY[this.colorPostion[j]] = dataY;
-
-          }
-
-        }
-      }
-      for (let i = 0; i < this.colorPostion.length; i++) {
-        this.opacityList[i] = this.opacityPointY[this.colorPostion[i]];
-      }
-      this.clear();
-      this.drawGrid();
-      this.drawAxis();
-      this.drawOpacityLine();
-      paintFlag = false;
-    }, false);
-
-
+    self = this;
+    this.canvas.addEventListener('mousedown', this.handleMousedown, false);
+    this.canvas.addEventListener('mousemove', this.handleMousemove, false);
+    this.canvas.addEventListener('mouseup', this.handleMouseup, false);
+    this.canvas.addEventListener('mouseleave', this.handleMouseleave, false);
   },
   addEvent: function () {
     if (this.drawLineByMouseFlag) {
       this.drawLineByMouse();
     }
   },
+  removeEvent: function() {
+    this.canvas.removeEventListener('mousedown', this.handleMousedown);
+    this.canvas.removeEventListener('mousemove', this.handleMousemove);
+    this.canvas.removeEventListener('mouseup', this.handleMouseup);
+    this.canvas.removeEventListener('mouseleave', this.handleMouseleave);
+  },
+
   // 数据转为像素坐标
   dataToPoint: function (data, domain, range) {
     return this.zp.utils.linearMap(data, domain, range);
@@ -281,6 +295,11 @@ OpacityChart.prototype = {
     this.clear();
     this.render();
   },
+  destroy: function () {
+    this.removeEvent();
+    this.zp = null;
+    this.canvas = null;
+  },
   clear: function () {
     this.zp.clear();
   },
@@ -288,7 +307,6 @@ OpacityChart.prototype = {
     this.clear();
     this.render();
     this.addEvent();
-
   }
 }
 export default OpacityChart;
