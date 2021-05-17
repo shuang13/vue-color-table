@@ -29,8 +29,7 @@
           </div>
         </div>
         <div class="vct_dialog_content_mid">
-          <div class="vct_dialog_content_mid_opacity-chart" @mouseup="parseOpacityToLutItem"
-            >
+          <div class="vct_dialog_content_mid_opacity-chart" @mouseup="parseOpacityToLutItem">
             <canvas class="vct_dialog_content_mid_opacity-chart_canvas" width="360px" height="170px"></canvas>
           </div>
           <div class="vct_dialog_content_mid_lut-color-table">
@@ -41,7 +40,7 @@
               <el-table-column label="颜色">
                 <template slot-scope="scope">
                   <el-color-picker class="vct_dialog_content_mid_lut-color-table_color-picker"
-                    v-model="lutItem[scope.$index].color" show-alpha @change="handleColorPickerChange">
+                    v-model="lutItem[scope.$index].color" show-alpha @change="handleColorPickerChange" size="mini">
                   </el-color-picker>
                 </template>
               </el-table-column>
@@ -51,7 +50,7 @@
           </div>
           <div class="vct_dialog_content_mid_handle">
             <input v-model="ipNum" class="vct_dialog_content_mid_handle_input-interpolation" type="number" value="1"
-              oninput="if(value<1)value=1">
+              oninput="if(value<1){value=1} else {value = parseInt(value)}">
             <div class="vct_dialog_content_mid_handle_btn ui-vct-ib">
               <button class="vct_dialog_content_mid_handle_btn_interpolation ui-vct-btn"
                 @click="handleBtnInterpolation">插值</button>
@@ -59,7 +58,7 @@
             </div>
           </div>
         </div>
-        <div class="vct_dialog_content_right" >
+        <div class="vct_dialog_content_right">
           <canvas class="vct_dialog_content_right_color-bar" width="67px" height="500px">
 
           </canvas>
@@ -77,14 +76,8 @@
   import ColorBar from './js/colorBar.js'
   import OpacityChart from './js/opacityChart.js'
   import utils from './js/utils.js'
-  const COLOR_TABLE_CONFIG = {
-    'rainbow': [[0.0, 'rgba(0, 0, 255, 1.0)'], [0.2, 'rgba(0, 255, 255, 1.0)'], [0.5, 'rgba(0, 255, 0, 0.5)'], [0.8, 'rgba(255, 255, 0, 1.0)'], [1.0, 'rgba(255, 0, 0, 1.0)']],
-    'cooltowarm': [[0.0, '#3C4EC2'], [0.2, '#9BBCFF'], [0.5, '#DCDCDC'], [0.8, '#F6A385'], [1.0, '#B40426']],
-    'blackbody': [[0.0, '#000000'], [0.2, '#780000'], [0.5, '#E63200'], [0.8, '#FFFF00'], [1.0, '#FFFFFF']],
-    'grayscale': [[0.0, '#000000'], [0.2, '#404040'], [0.5, '#7F7F80'], [0.8, '#BFBFBF'], [1.0, '#FFFFFF']],
-    'rainbow2': [[0.0, '#000000'], [0.2, '#404040'], [0.5, '#7F7F80'], [1, '#BFBFBF']]
-
-  }
+  import config from './color.config.js'
+  let  COLOR_TABLE_CONFIG = config;
   export default {
     props: {
       value: {
@@ -105,7 +98,7 @@
     },
     watch: {
       dialogVisible(val) {
-        if(!val) {
+        if (!val) {
           this.destroyColorBar();
           this.destroyOpacityChart();
         }
@@ -123,7 +116,6 @@
     },
     data() {
       return {
-
         currentName: this.value.name,
         currentIndex: Number,
         ipNum: 1,
@@ -131,12 +123,10 @@
         triggerStyle: {
           width: '100px',
           height: '25px',
-
         },
         tableHeaderStyle: {
           padding: 0,
         },
-
         tableCellStyle: {
           padding: 0,
         },
@@ -147,6 +137,11 @@
         oc: null
       };
     },
+    beforeCreate() {
+      if (window.localStorage.getItem("COLOR_TABLE_CONFIG")) {
+        COLOR_TABLE_CONFIG = JSON.parse(window.localStorage.getItem("COLOR_TABLE_CONFIG"));
+      }
+    },
     created() {
       if (!this.value.name) {
         this.value['name'] = 'rainbow';
@@ -154,10 +149,9 @@
         this.currentName = 'rainbow';
       }
     },
-    destroyed () {
+    destroyed() {
     },
     mounted() {
-      
     },
     methods: {
       colorValueformatter(row) {
@@ -186,6 +180,14 @@
           })
         }
         return arr;
+      },
+      parseLutToConfig(lut) {
+        let config = {};
+        lut.forEach((items) => {
+
+          config[items.name] = items.colors;
+        })
+        return config;
       },
       parseBgcolorTemplate(val) {
         let str = '';
@@ -231,7 +233,6 @@
       addLutItem(items) {
         this.currentIndex = this.lutData.length;
         this.modifyLutItem(this.currentIndex, items);
-        this.setLutTableActive(this.currentIndex);
         this.$message({
           showClose: true,
           message: '保存成功！',
@@ -262,6 +263,8 @@
           message: '保存成功！',
           type: 'success'
         });
+        this.setLutTableActive(index);
+
       },
       deleteColorItem(indexArr) {
         for (let i = indexArr.length - 1; i >= 0; i--) {
@@ -324,6 +327,8 @@
 
 
         index < 0 ? this.addLutItem(this.lutItem) : this.modifyLutItem(index, this.lutItem);
+        let config = JSON.stringify(this.parseLutToConfig(this.lutData));
+        window.localStorage.setItem('COLOR_TABLE_CONFIG', config);
       },
       handleBtnDelete() {
         this.deleteLutItem(this.currentIndex);
@@ -408,7 +413,7 @@
         }
         this.cb.refresh(opts);
       },
-      destroyColorBar () {
+      destroyColorBar() {
         this.cb.destroyed();
         this.cb = null;
       },
@@ -421,7 +426,7 @@
         this.oc = new OpacityChart(document.querySelector('.vct_dialog_content_mid_opacity-chart_canvas'), opts);
         this.oc.init();
       },
-      
+
       refreshOpacityChart() {
         let opts = {
           data: this.lutItem,
@@ -437,4 +442,3 @@
   };
 </script>
 <style src="./style.scss" lang="scss"></style>
-

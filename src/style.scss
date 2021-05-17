@@ -79,7 +79,10 @@ $test-border: 1px solid #ccc;
           height: 55%;
           // border: $test-border;
           &_color-picker {
-            margin-top: 10px;
+            top: 4px;
+          }
+          &_color-value {
+            width: 80%;
           }
         }
         &_handle {
